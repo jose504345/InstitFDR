@@ -36,6 +36,7 @@
             padding: 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten si hay poco espacio */
         }
         nav ul li {
             margin: 0 15px;
@@ -45,6 +46,11 @@
             text-decoration: none;
             font-weight: 700;
             padding: 10px 15px;
+            transition: background-color 0.3s; /* Suaviza el cambio de color de fondo */
+        }
+        nav ul li a:hover {
+            background-color: #555; /* Fondo más claro al pasar el ratón */
+            border-radius: 5px; /* Bordes redondeados para el efecto hover */
         }
         nav ul li.selected a {
             background-color: #000000; /* Fondo gris para el elemento seleccionado */
