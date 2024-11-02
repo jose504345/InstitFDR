@@ -45,6 +45,10 @@
             font-weight: 700;
             padding: 10px 15px;
         }
+        .selected a {
+            background-color: #0073e6; /* Color de fondo para el enlace seleccionado */
+            color: #fff; /* Color del texto para el enlace seleccionado */
+        }
         h1 {
             text-align: center;
             color: #333;
@@ -83,8 +87,8 @@
     <header>
         <h1>Instituto Franklin Delano Roosevelt</h1>
         <nav>
-            <ul>
-                <li class="selected"><a href="index.html">Inicio</a></li>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="ofertas-academicas.html">Ofertas Académicas</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="promocion2024.html">Promoción 2024</a></li>
@@ -93,6 +97,17 @@
         </nav>
     </header>
 
+    <script>
+        // Script para añadir la clase 'selected' al enlace correspondiente
+        const navLinks = document.querySelectorAll('.nav-list a');
+        const currentPage = window.location.pathname.split('/').pop();
+
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.parentElement.classList.add('selected');
+            }
+        });
+    </script>
 
     <!-- Contenido de la página -->
     <section>
