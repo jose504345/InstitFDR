@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalaciones - Instituto Franklin Delano Roosevelt</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .galeria {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .galeria img {
+            width: 300px;
+            height: 200px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .galeria img:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Instituto Franklin Delano Roosevelt</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="ofertas-academicas.html">Ofertas Académicas</a></li>
+                <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                <li><a href="promocion2024.html">Promo2024</a></li>
+                <li class="selected"><a href="instalaciones.html">Instalaciones</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Nuestras Instalaciones</h2>
+            <p>
+                El instituto cuenta con modernas instalaciones diseñadas para ofrecer un ambiente óptimo para el aprendizaje y el desarrollo de habilidades prácticas. Estas incluyen:
+            </p>
+            <ul>
+                <li>Laboratorios de informática con tecnología de última generación.</li>
+                <li>Aulas amplias y cómodas equipadas con recursos audiovisuales.</li>
+                <li>Biblioteca con acceso a una amplia variedad de recursos educativos.</li>
+                <li>Áreas recreativas para el esparcimiento de los estudiantes.</li>
+                <li>Gimnasio con equipos modernos para promover la actividad física.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Galería de Imágenes</h3>
+            <div class="galeria">
+                <img src="C:\Users\JOSE REYES\Desktop\Proyecto de diseño\historiafdr\fotocolegio1.jpeg" alt="Instalación 1">
+                <img src="C:\Users\JOSE REYES\Desktop\Proyecto de diseño\historiafdr\fdredificio.jpg" alt="Instalación 2">
+                <img src="C:\Users\JOSE REYES\Desktop\Proyecto de diseño\historiafdr\edificiob.jpeg" alt="Instalación 3">
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modal">
+        <img id="modal-img" src="" alt="">
+    </div>
+
+    <footer>
+        <p>Instituto Franklin Delano Roosevelt - Puerto Cortés, Honduras</p>
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.galeria img');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                modalImg.src = image.src;
+                modal.style.display = 'flex';
+            });
+        });
+
+        modal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
